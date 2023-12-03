@@ -14,27 +14,22 @@ namespace Tyuiu.LebedevIV.Sprint6.Task3.V15.Lib
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
 
-            // Создание временного массива для хранения третьего столбца и его индексов
             int[,] tempArray = new int[rows, 2];
             for (int i = 0; i < rows; i++)
             {
-                tempArray[i, 0] = matrix[i, 2]; // Хранение элемента третьего столбца
-                tempArray[i, 1] = i; // Хранение индекса строки
+                tempArray[i, 0] = matrix[i, 2]; 
+                tempArray[i, 1] = i; 
             }
-
-            // Сортировка временного массива по третьему столбцу
             for (int i = 0; i < rows - 1; i++)
             {
                 for (int j = 0; j < rows - i - 1; j++)
                 {
                     if (tempArray[j, 0] > tempArray[j + 1, 0])
                     {
-                        // Перестановка элементов во временном массиве
                         int temp = tempArray[j, 0];
                         tempArray[j, 0] = tempArray[j + 1, 0];
                         tempArray[j + 1, 0] = temp;
 
-                        // Перестановка индексов строк во временном массиве
                         temp = tempArray[j, 1];
                         tempArray[j, 1] = tempArray[j + 1, 1];
                         tempArray[j + 1, 1] = temp;
@@ -42,7 +37,6 @@ namespace Tyuiu.LebedevIV.Sprint6.Task3.V15.Lib
                 }
             }
 
-            // Создание новой матрицы с учетом отсортированных индексов строк
             int[,] sortedMatrix = new int[rows, cols];
             for (int i = 0; i < rows; i++)
             {
