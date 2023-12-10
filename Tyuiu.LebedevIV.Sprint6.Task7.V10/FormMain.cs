@@ -96,7 +96,7 @@ namespace Tyuiu.LebedevIV.Sprint6.Task7.V10
 
         private void ButtonSave_LIV_Click(object sender, EventArgs e)
         {
-            SaveFileDialog_LIV.FileName = "OutPutFileTask7V20.csv";
+            SaveFileDialog_LIV.FileName = "OutPutFileTask7V10.csv";
             SaveFileDialog_LIV.InitialDirectory = Directory.GetCurrentDirectory();
             SaveFileDialog_LIV.ShowDialog();
 
